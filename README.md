@@ -8,6 +8,9 @@ VPN) results in meetings that cannot be joined using the links in the calendar e
 application "jiggles the handle" so to speak and makes the meeting launch under circumstances
 where it normally wouldn't.
 
+Supports Windows 7/8 jumplists and instant-join from the system tray icon. Probably doesn't
+work well or at all on Windows XP. Haven't bothered trying!
+
 Microsoft Outlook need to be installed, or you will need to disable/hide the Microsoft Outlook
 integration from the settings screen.
 
