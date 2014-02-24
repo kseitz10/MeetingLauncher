@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="MeetingLauncher.ModernWPF.Views.AboutView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+
+    <StackPanel>
+        <TextBlock Margin="0,0,0,5" TextWrapping="Wrap">Powered by GalaSoft MVVM Light.</TextBlock>
+        <TextBlock Margin="0,0,0,5" TextWrapping="Wrap">Tray icon support by http://www.hardcodet.net/wpf-notifyicon</TextBlock>
+        <TextBlock Margin="0,0,0,5" TextWrapping="Wrap">User interface based on Modern UI for WPF (http://mui.codeplex.com)</TextBlock>
+        <TextBlock Margin="0,0,0,5" TextWrapping="Wrap">Many icons for this application originate from http://modernuiicons.com</TextBlock>
+        <TextBlock Margin="0,0,0,5" TextWrapping="Wrap">Meeting Launcher icon modified from original icon designed by Edward Boatman on The Noun Project. (Creative Commons Attribution.)</TextBlock>
+    </StackPanel>
+
+</UserControl>

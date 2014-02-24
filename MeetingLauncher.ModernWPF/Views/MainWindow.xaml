@@ -1,0 +1,51 @@
+<mui:ModernWindow x:Class="MeetingLauncher.ModernWPF.Views.MainWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  xmlns:taskbarNotification="clr-namespace:Hardcodet.Wpf.TaskbarNotification;assembly=Hardcodet.Wpf.TaskbarNotification"
+                  Title="Meeting Launcher"
+                  Width="525"
+                  Height="450"
+                  MinWidth="525"
+                  MinHeight="450"
+                  ContentSource="/Views/MainView.xaml"
+                  DataContext="{Binding MainWindow,
+                                        Source={StaticResource ViewModelLocator}}"
+                  IsTitleVisible="True"
+                  SnapsToDevicePixels="True"
+                  UseLayoutRounding="True"
+                  WindowStartupLocation="CenterScreen">
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="meetings">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="quick join" Source="/Views/MainView.xaml" />
+                <mui:Link DisplayName="outlook calendar" Source="/Views/OutlookMeetingsView.xaml" />
+                <mui:Link DisplayName="custom" Source="/Views/CustomMeetingsView.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="tools">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="settings" Source="/Views/SettingsView.xaml" />
+                <mui:Link DisplayName="about" Source="/Views/AboutView.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+    <Grid>
+        <taskbarNotification:TaskbarIcon x:Name="TaskbarIcon"
+                                         IconSource="pack://application:,,,/MeetingLauncher;component/Resources/MeetingLauncher.ico"
+                                         ToolTipText="Meeting Launcher"
+                                         TrayMouseDoubleClick="ContextMenu_DoubleClick"
+                                         Visibility="{Binding ApplicationSettings.ShowTrayIcon,
+                                                              Converter={StaticResource VisibleIfTrueConverter}}">
+            <taskbarNotification:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Click="ContextMenu_ShowApplicationClick" Header="Show Meeting Launcher" />
+                    <MenuItem Click="ContextMenu_JoinNextMeetingClick" Header="Join Meeting Instantly" />
+                    <Separator />
+                    <MenuItem Click="ContextMenu_ExitApplicationClick" Header="Exit" />
+                </ContextMenu>
+            </taskbarNotification:TaskbarIcon.ContextMenu>
+        </taskbarNotification:TaskbarIcon>
+    </Grid>
+
+</mui:ModernWindow>

@@ -1,0 +1,33 @@
+﻿<Window x:Class="MeetingLauncher.ModernWPF.Views.ErrorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PC LOAD LTR"
+        Width="510"
+        Height="376"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="SingleBorderWindow">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock FontWeight="Bold" Text="An exception occurred. Please mock the developer." TextWrapping="Wrap" />
+
+        <TextBox Grid.Row="1"
+                 Margin="0,10"
+                 ScrollViewer.CanContentScroll="True"
+                 Text="{Binding ExceptionText, Mode=OneWay}"
+                 IsReadOnly="True"
+                 IsReadOnlyCaretVisible="False"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Visible" />
+
+        <Button Grid.Row="2"
+                HorizontalAlignment="Right"
+                Click="ButtonBase_OnClick"
+                Content="OK" />
+    </Grid>
+</Window>
