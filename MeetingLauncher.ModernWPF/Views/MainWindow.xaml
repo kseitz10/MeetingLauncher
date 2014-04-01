@@ -32,7 +32,7 @@
     </mui:ModernWindow.MenuLinkGroups>
     <Grid>
         <taskbarNotification:TaskbarIcon x:Name="TaskbarIcon"
-                                         IconSource="pack://application:,,,/MeetingLauncher;component/Resources/MeetingLauncher.ico"
+                                         IconSource="pack://application:,,,/MeetingLauncher.ModernWPF;component/Resources/MeetingLauncher.ico"
                                          ToolTipText="Meeting Launcher"
                                          TrayMouseDoubleClick="ContextMenu_DoubleClick"
                                          Visibility="{Binding ApplicationSettings.ShowTrayIcon,
